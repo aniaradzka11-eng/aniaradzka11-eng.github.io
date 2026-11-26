@@ -747,4 +747,35 @@ window.addEventListener('scroll',upd,{passive:true});upd();})();
 @media(max-width:760px){.story-layout{grid-template-columns:1fr!important}.story-layout>.story-post:first-child,.story-layout>.story-side,.story-layout>.story-post:nth-child(2){grid-column:1;grid-row:auto}}
 </style>
 <footer id="kontakt"><div><div class="section-label">C.D.N.</div><h2>Masz temat?<br/>Napisz.</h2><a href="mailto:aniaradzka11@gmail.com">aniaradzka11@gmail.com ↗</a></div><div class="footer-small">Anna Radzka<br/>Content marketing · copywriting · storytelling<br/>Portfolio / 2026</div></footer>
+<style id="screens-align">
+/* Wyrównanie screenów: równe ramki, podpisy i linki na tej samej wysokości */
+/* Artykuły: link „Czytaj artykuł” zawsze na dole karty */
+#realizacje .article-proof-gallery>figure.proof{height:100%}
+#realizacje .article-proof-gallery>figure.proof figcaption{flex:1 1 auto!important}
+#realizacje .article-proof-gallery .article-under-link{margin-top:auto!important}
+/* Mailingi: link na dole karty */
+#mailingi .mailing-card{height:100%}
+/* Storytelling: trzy równe karty obok siebie */
+#storytelling .story-layout{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:22px!important;row-gap:22px!important;justify-content:stretch!important;align-items:stretch!important;margin-top:24px}
+#storytelling .story-layout>.story-post,#storytelling .story-layout>.story-side{grid-column:auto!important;grid-row:auto!important;order:0!important;align-self:stretch!important;max-width:none!important;margin:0!important;text-align:left!important}
+#storytelling .story-side{display:flex!important}
+#storytelling .story-post{display:flex!important;flex-direction:column;width:100%;max-width:none!important;margin:0!important;background:#fff;border:1px solid rgba(40,48,65,.10);border-radius:12px;overflow:hidden;box-shadow:0 5px 18px rgba(20,28,45,.06)}
+#storytelling .story-post img{display:block;width:100%!important;height:460px!important;max-height:none!important;object-fit:cover!important;object-position:top center!important;border:0!important;border-bottom:1px solid var(--line)!important;border-radius:0!important;cursor:zoom-in}
+#storytelling .story-post figcaption{flex:1 1 auto;margin:0!important;padding:10px 12px 12px;font-size:12px!important;line-height:1.45;color:var(--muted)}
+/* Kampania: każdy krok z identyczną ramką screenu */
+.camp-steps li{display:flex;flex-direction:column}
+.camp-steps .step-post,.camp-steps .step-mail{display:block;width:100%!important;max-width:none!important;margin:14px 0 0!important}
+.camp-steps .step-post img,.camp-steps .step-mail img{display:block;width:100%!important;height:220px!important;max-height:none!important;aspect-ratio:auto!important;object-fit:cover!important;object-position:top center!important;margin:0!important;background:#fff;border:1px solid rgba(0,0,0,.12)!important;border-radius:6px!important}
+.camp-steps .step-kv img{object-fit:contain!important;object-position:center!important;padding:6px}
+.camp-steps .step-photo img{object-position:center!important}
+.camp-steps .step-post figcaption,.camp-steps .step-mail span{margin-top:8px!important;font-size:12px!important;line-height:1.4!important;text-align:left!important}
+.camp-steps .step-links{margin-top:8px}
+.camp-steps li>h4{min-height:1.3em}.camp-steps li>p{min-height:4.7em}
+@media(max-width:1000px){#storytelling .story-layout{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:600px){#storytelling .story-layout{grid-template-columns:1fr!important}#storytelling .story-post img{height:400px!important}.camp-steps .step-post img,.camp-steps .step-mail img{height:240px!important}}
+</style>
+<script>
+(function(){var lb=document.getElementById('mail-lb');if(!lb)return;var img=lb.querySelector('img'),dr=lb.querySelector('.lb-drive');
+document.querySelectorAll('#storytelling .story-post img').forEach(function(s){s.addEventListener('click',function(){img.src=s.src;img.alt=s.alt;lb.classList.remove('lb-wide');dr.hidden=true;lb.hidden=false;lb.scrollTop=0;document.body.style.overflow='hidden';});});})();
+</script>
 </body></html>
